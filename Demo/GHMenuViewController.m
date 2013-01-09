@@ -95,14 +95,14 @@
 
 #pragma mark UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-	return (_headers[section] == [NSNull null]) ? 0.0f : 21.0f;
+	return (_headers[section] == [NSNull null]) ? 0.0f : 27.0f;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
 	NSObject *headerText = _headers[section];
 	UIView *headerView = nil;
 	if (headerText != [NSNull null]) {
-		headerView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, [UIScreen mainScreen].bounds.size.height, 21.0f)];
+		headerView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, [UIScreen mainScreen].bounds.size.height, 27.0f)];
 		CAGradientLayer *gradient = [CAGradientLayer layer];
 		gradient.frame = headerView.bounds;
 		gradient.colors = @[
@@ -113,7 +113,7 @@
 		
 		UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectInset(headerView.bounds, 12.0f, 5.0f)];
 		textLabel.text = (NSString *) headerText;
-		textLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:([UIFont systemFontSize] * 0.8f)];
+		textLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:([UIFont systemFontSize])];
 		textLabel.shadowOffset = CGSizeMake(0.0f, 1.0f);
 		textLabel.shadowColor = [UIColor colorWithWhite:0.0f alpha:0.25f];
 		textLabel.textColor = [UIColor colorWithRed:(125.0f/255.0f) green:(129.0f/255.0f) blue:(146.0f/255.0f) alpha:1.0f];
@@ -124,7 +124,7 @@
 		topLine.backgroundColor = [UIColor colorWithRed:(78.0f/255.0f) green:(86.0f/255.0f) blue:(103.0f/255.0f) alpha:1.0f];
 		[headerView addSubview:topLine];
 		
-		UIView *bottomLine = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 21.0f, [UIScreen mainScreen].bounds.size.height, 1.0f)];
+		UIView *bottomLine = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 27.0f, [UIScreen mainScreen].bounds.size.height, 1.0f)];
 		bottomLine.backgroundColor = [UIColor colorWithRed:(36.0f/255.0f) green:(42.0f/255.0f) blue:(5.0f/255.0f) alpha:1.0f];
 		[headerView addSubview:bottomLine];
 	}
