@@ -21,6 +21,6 @@
 					animated:(BOOL)animated 
 			  scrollPosition:(UITableViewScrollPosition)scrollPosition;
 
--(void)showController:(UINavigationController *)navigationController;
+-(void)showController:(UIViewController *)viewController;
 
 @end

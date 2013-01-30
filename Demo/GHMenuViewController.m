@@ -145,9 +145,8 @@
 	_sidebarVC.contentViewController = _controllers[indexPath.section][indexPath.row];
 }
 
--(void)showController:(UINavigationController *)navigationController {
- 	_sidebarVC.contentViewController = navigationController;
-    [_menuTableView deselectRowAtIndexPath:_menuTableView.indexPathForSelectedRow animated:YES];
+-(void)showController:(UIViewController *)controller {
+ 	[(UINavigationController *)_sidebarVC.contentViewController pushViewController:controller animated:NO];
 }
 
 @end
